@@ -8,8 +8,6 @@ export function MainViewModel() {
   const startSensor = SensorManager.getDefaultSensor(android.hardware.Sensor.TYPE_LIGHT);
   const nativeDelay = android.hardware.SensorManager.SENSOR_DELAY_NORMAL;
 
-  
-  
   const viewModel = new Observable()
 
   let value = 0;
@@ -22,8 +20,6 @@ export function MainViewModel() {
       viewModel.set('light', event.values[0])
     }
   });
-
-  
 
   SensorManager.registerListener(
     sensorListener,
