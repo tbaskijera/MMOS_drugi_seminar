@@ -57,6 +57,25 @@ Tijekom izrade aplikacije nije bilo nikakvih problema, no cijeli je proces traja
 
 Cjelokupni kod aplikacije dostupan je na [Githubu](https://github.com/tbaskijera/MMOS_drugi_seminar).
 
+## Profiliranje aplikacije
+Izrađenu aplikaciju potrebno provesti ćemo kroz proces profiliranja uz pomoć ```Andorid Studia```. Parametri ili komponente nad kojima ćemo snimati promet i/ili opterećenje te vidjeti kako se ponašaju su CPU, memorija i energija. Kako bismo navedeno omogućili bilo je potrebno aplikaciju otvoriti kao projekt te njeni .apk izabrati za profiliranje. Aplikaciju ćemo pokrenuti na fizičkom android uređaju, a ne na emulatoru.
+![](https://imgur.com/gg13RrV.jpg)
+
+### CPU
+Tijekom izvođenja aplikacije, a konkretno prilikom približavanja uređaja različitim razinama svjetlosti, graf optrećenosti CPU-a se mijenja. Međutim, ti su pomaci vrlo minimalni te možemo zaključiti kako aplikacija nije zahtjevna te ne zahtijeva veliku procesorsku moć. Iz snimljenih podataka možemo vidjeti da CPU najviše opterećuju procesi `mali-utility-wo()`, `V8 DefaultWorke()` i `script.mysensor()`.
+![](https://imgur.com/uynJ7J1.jpg)
+
+### Memorija
+Iz snimljenog prometa memorije vidimo da postoji ukupno 1036 klasa od kojih najviše alokacija ima `byte[]`, a najveći retained size `Bitmap(android.graphics)`.
+![](https://imgur.com/BbyDlsX.jpg)
+
+### Energija
+Energija je gotovo cijelo vrijeme konstantna te je količina trošenja zanemariva, osim kod pojedinih odskakanja kada od mraka odjedanput na uređaj fokusiramo jako svjetlo.
+![](https://imgur.com/oI7bTTi.jpg)
+
+Na kraju, iz očitanih podataka možemo zaključiti da aplikacija nije zahtjevna ni u kojem smislu te nije potrebno poduzimati nikakve mjere u svrhu optimizacije.
+
+
 ## Literatura
 https://developer.android.com/reference/android/hardware/SensorManager
 
